@@ -1,0 +1,26 @@
+{
+  "name": "stockui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kausmos/stock_price_UI.git"
+  },
+  "author": "Kaustuva Ghosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kausmos/stock_price_UI/issues"
+  },
+  "homepage": "https://github.com/kausmos/stock_price_UI#readme",
+  "dependencies": {
+    "airtable": "^0.6.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "git": "^0.1.5",
+    "html": "^1.0.0"
+  }
+}

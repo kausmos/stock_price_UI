@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#6D5C80">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#6D5C80">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="STock trading advisor">
+	<meta name="keywords" content="node.js, javascript, digital art, adobe illustrator, web developer, portfolio, UI design">
+	<meta name="author" content="Kaustuva Ghosh">
+	<title>Stock Market Advisor</title>
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+	<noscript>You need Javascript to experience this website.</noscript>
+
+</head>
+<body>
+    <div class="row mx-auto text-center">
+        <div id="calendar-container col-8">
+              <h1 id="calendar-title">
+                <div class="btn left"></div>
+                <span>April, 2019</span>
+                <div class="btn right"></div>
+              </h1>
+              <table id="calendar-table">
+                <tr>
+                  <th>Sun</th>
+                  <th>Mon</th>
+                  <th>Tue</th>
+                  <th>Wed</th>
+                  <th>Thu</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+                </tr>
+                <tr>
+                  <td><span class="datelabel"></span></td>
+                  <td><span class="datelabel">1</span></td>
+                  <td><span class="datelabel">2</span></td>
+                  <td><span class="datelabel">3</span></td>
+                  <td><span class="datelabel">4</span></td>
+                  <td><span class="datelabel">5</span></td>
+                  <td><span class="datelabel">6</span></td>
+                </tr>
+                <tr>
+                  <td><span class="datelabel">7</span></td>
+                  <td><span class="datelabel">8</span></td>
+                  <td><span class="datelabel">9</span></td>
+                  <td><span class="datelabel">10</span></td>
+                  <td><span class="datelabel">11</span></td>
+                  <td><span class="datelabel">12</span></td>
+                  <td><span class="datelabel">13</span></td>
+                </tr>
+                <tr>
+                  <td><span class="datelabel">14</span></td>
+                  <td><span class="datelabel">15</span></td>
+                  <td><span class="datelabel">16</span></td>
+                  <td><span class="datelabel">17</span></td>
+                  <td><span class="datelabel">18</span></td>
+                  <td><span class="datelabel">19</span></td>
+                  <td><span class="datelabel">20</span></td>
+                </tr>
+                <tr>
+                  <td><span class="datelabel">21</span></td>
+                  <td><span class="datelabel">22</span></td>
+                  <td><span class="datelabel">23</span></td>
+                  <td><span class="datelabel">24</span></td>
+                  <td><span class="datelabel">25</span></td>
+                  <td><span class="datelabel">26</span></td>
+                  <td><span class="datelabel">27</span></td>
+                </tr>
+                <tr>
+                  <td><span class="datelabel">28</span></td>
+                  <td><span class="datelabel">29</span></td>
+                  <td><span class="datelabel">30</span></td>
+                  <td><span class="datelabel"></span></td>
+                  <td><span class="datelabel"></span></td>
+                  <td><span class="datelabel"></span></td>
+                  <td><span class="datelabel"></span></td>
+                </tr>
+                
+              </table>
+              <p id="date-text"></p>
+            </div>
+        <div id= "stock-info container col-4"> Stock information comes here</div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+</html>
