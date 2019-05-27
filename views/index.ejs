@@ -41,57 +41,71 @@
                   <th>Sat</th>
                 </tr>
                 <tr>
-                  <td><span class="datelabel"></span></td>
-                  <td><span class="datelabel">1</span></td>
-                  <td><span class="datelabel">2</span></td>
-                  <td><span class="datelabel">3</span></td>
-                  <td><span class="datelabel">4</span></td>
-                  <td><span class="datelabel">5</span></td>
-                  <td><span class="datelabel">6</span></td>
+                  <td><span class="datelabel"></span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">1</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">2</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">3</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">4</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">5</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">6</span><div class="pricelabel"></div></td>
                 </tr>
                 <tr>
-                  <td><span class="datelabel">7</span></td>
-                  <td><span class="datelabel">8</span></td>
-                  <td><span class="datelabel">9</span></td>
-                  <td><span class="datelabel">10</span></td>
-                  <td><span class="datelabel">11</span></td>
-                  <td><span class="datelabel">12</span></td>
-                  <td><span class="datelabel">13</span></td>
+                  <td><span class="datelabel">7</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">8</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">9</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">10</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">11</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">12</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">13</span><div class="pricelabel"></div></td>
                 </tr>
                 <tr>
-                  <td><span class="datelabel">14</span></td>
-                  <td><span class="datelabel">15</span></td>
-                  <td><span class="datelabel">16</span></td>
-                  <td><span class="datelabel">17</span></td>
-                  <td><span class="datelabel">18</span></td>
-                  <td><span class="datelabel">19</span></td>
-                  <td><span class="datelabel">20</span></td>
+                  <td><span class="datelabel">14</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">15</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">16</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">17</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">18</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">19</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">20</span><div class="pricelabel"></div></td>
                 </tr>
                 <tr>
-                  <td><span class="datelabel">21</span></td>
-                  <td><span class="datelabel">22</span></td>
-                  <td><span class="datelabel">23</span></td>
-                  <td><span class="datelabel">24</span></td>
-                  <td><span class="datelabel">25</span></td>
-                  <td><span class="datelabel">26</span></td>
-                  <td><span class="datelabel">27</span></td>
+                  <td><span class="datelabel">21</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">22</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">23</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">24</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">25</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">26</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">27</span><div class="pricelabel"></div></td>
                 </tr>
                 <tr>
-                  <td><span class="datelabel">28</span></td>
-                  <td><span class="datelabel">29</span></td>
-                  <td><span class="datelabel">30</span></td>
-                  <td><span class="datelabel"></span></td>
-                  <td><span class="datelabel"></span></td>
-                  <td><span class="datelabel"></span></td>
-                  <td><span class="datelabel"></span></td>
+                  <td><span class="datelabel">28</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">29</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel">30</span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel"></span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel"></span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel"></span><div class="pricelabel"></div></td>
+                  <td><span class="datelabel"></span><div class="pricelabel"></div></td>
                 </tr>
                 
               </table>
-              <p id="date-text"></p>
+              <div class="priceform">
+                <form action="/" method="POST"></form>
+                <p id="date-text" name="Date"></p>
+                <input type="number" name="price">
+                <button type= "submit">Add Price</button>
+              </div>
+              <div class="deleteform">
+                <form action="/?_" method="POST"></form>
+                <p id="date-textb" name="Date"></p>
+                <p id="price-text"></p>
+                <button type= "submit">Remove</button>
+                
+              </div>
+              
             </div>
         <div id= "stock-info container col-4"> Stock information comes here</div>
     </div>
-    
+    <p id="dataObj" hidden><%=dataObj%></p>
+  
 <script src="script.js"></script>
 </body>
 </html>

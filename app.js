@@ -12,8 +12,8 @@ app.get('/',function(req,res) {
   
   var dataObj={};
   base('Stock Price').select({
-    // Selecting the first 3 records in Grid view:
-    maxRecords: 3,
+    // Selecting the first 50 records in Grid view:
+    maxRecords: 50,
     view: "Grid view"
   }).eachPage(function page(records, fetchNextPage) {
       // This function (`page`) will get called for each page of records.
@@ -22,7 +22,7 @@ app.get('/',function(req,res) {
         dataObj[record.get('Date')]=record.get('Price');
           
       });
-  
+    
       // To fetch the next page of records, call `fetchNextPage`.
       // If there are more records, `page` will get called again.
       // If there are no more records, `done` will get called.
@@ -30,11 +30,20 @@ app.get('/',function(req,res) {
   
   }, function done(err) {
       if (err) { console.error(err); return; }
+      console.log(dataObj);
+      res.render('index.ejs',{dataObj:JSON.stringify(dataObj)});
   });
   
-  res.render('index.ejs',{dataObj:dataObj});
+  
 });
 
+app.post('/',function(req,res) {
+  
+  //post functionality will be adressed here
+  
+  
+  
+});
 
 
 

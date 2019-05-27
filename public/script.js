@@ -1,5 +1,8 @@
 let CURR_DATE = new Date();
-
+var dataObj = document.querySelector("#dataObj");
+console.log("can access data obj"+ dataObj.innerHTML);
+var JSONobj= JSON.parse(dataObj.innerHTML);
+console.log("JSON object is"+JSONobj['2019-05-27']);
 const MONTHS = [
   'January',
   'February',
@@ -23,6 +26,8 @@ function getTotalDaysInMonth(year, month) {
 
 const grid = document.querySelectorAll('#calendar-table td .datelabel');
 const dateText = document.getElementById('date-text');
+const dateTextB = document.getElementById('date-textb');
+const priceText = document.getElementById('price-text');
 
 grid.forEach(cell => cell.parentNode.onclick = function() {
   const selectedDate = cell.innerHTML;
@@ -38,7 +43,7 @@ const calendarTitle = document.querySelectorAll('#calendar-title > span')[0];
 function clearGrid() {
   grid.forEach(cell => {
     cell.innerHTML = '';
-    cell.classList.remove('today-cell');
+    cell.parentNode.classList.remove('today-cell');
   });
 }
 
@@ -50,6 +55,7 @@ function renderCalendar(date = CURR_DATE) {
   
   const dayOfWeek  = date.getDay();
   const dateOfMnth = date.getDate();
+  var queryDate = new Date(date.toDateString());
   
   let totalMonthDays = getTotalDaysInMonth(
     date.getFullYear(),
@@ -61,13 +67,19 @@ function renderCalendar(date = CURR_DATE) {
   if (startDay < 0)
     startDay = (startDay + 35) % 7;
   
-  for ( let i = startDay; i < totalMonthDays + startDay; i++ )
+  for ( let i = startDay; i < totalMonthDays + startDay; i++ ){
     grid[i % 35].innerHTML = (i - startDay + 1);
+    queryDate.setDate(grid[i % 35].innerHTML);
+    grid[i % 35].parentNode.lastChild.innerHTML = JSONobj[queryDate.toISOString().slice(0, 10)]|| "+";
+  }
   
-  grid[(startDay + dateOfMnth - 1) % 35].classList.add('today-cell');
+  grid[(startDay + dateOfMnth - 1) % 35].parentNode.classList.add('today-cell');
   
 //   dateText.innerHTML = CURR_DATE.toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-  dateText.innerHTML = CURR_DATE.toISOString().slice(0, 10);;
+  dateText.innerHTML = CURR_DATE.toISOString().slice(0, 10);
+  dateTextB.innerHTML = CURR_DATE.toISOString().slice(0, 10);
+  priceText.innerHTML = JSONobj[CURR_DATE.toISOString().slice(0, 10)];
+  
   
 }
 

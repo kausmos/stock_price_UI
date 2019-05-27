@@ -74,6 +74,10 @@ body {
   color:black;
 }
 
+td {
+  border: 2px solid red;
+}
+
 footer {
   margin: 10px auto;
   width: 90vw;
