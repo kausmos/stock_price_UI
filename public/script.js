@@ -124,11 +124,24 @@ function renderCalendar(date = CURR_DATE) {
   btn.onclick = function() {
     CURR_DATE.setMonth(CURR_DATE.getMonth() + incr);
     renderCalendar();
-    
   };
   
 })
 //clearGrid()
 renderCalendar();
+
+document.querySelector(".hidebox").addEventListener("click",function(){
+  this.parentNode.classList.add("zeroOpacity");
+})
+
+$(".fa-plus-square").on("click",function(){
+  console.log("clicked");
+  $(".priceform").removeClass("zeroOpacity");
+})
+
+
+
+
+
 
 

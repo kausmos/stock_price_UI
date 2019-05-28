@@ -15,12 +15,14 @@ body {
   margin: 2vh auto;
   border-radius: 10px;
   padding: 5px 10px;
+  
 }
 
 #calendar-title {
   width: 90%;
-  margin: 5vh auto;
+  margin: 30px auto;
   text-align: center;
+  color: #3D5D94;
 }
 
 #calendar-table {
@@ -35,6 +37,7 @@ body {
   
 }
 
+
 #calendar-table td{
   
   height: 80px;
@@ -45,7 +48,7 @@ body {
 }
 
 #calendar-table th {
-  background-color:#1F4A95;
+  background-color:#3D5D94;
   color:#D7F7ED;
 }
 
@@ -69,11 +72,11 @@ body {
 }
 
 .btn.left {
-  border-right: 10px solid black;
+  border-right: 10px solid #3D5D94;
 }
 
 .btn.right {
-  border-left: 10px solid black;
+  border-left: 10px solid #3D5D94;
 }
 
 .btn.left:hover {
@@ -102,11 +105,11 @@ body {
   background: #6D5285;
 }
 #calendar-table tr:nth-of-type(odd) td:nth-of-type(even) { 
-  background: #5A3B75;
+  background: #705C82;
 }
 
 #calendar-table tr:nth-of-type(even) td:nth-of-type(odd) { 
-  background: #5A3B75;
+  background: #705C82;
 }
 #calendar-table tr:nth-of-type(even) td:nth-of-type(even) { 
   background: #6D5285;
@@ -154,3 +157,102 @@ footer {
   display:block;
 }
 
+.priceform{
+  border-right: 5px solid #705C82;
+  border-bottom: 5px solid #705C82;
+  width: 300px;
+  height: 350px;
+  background:#2D4A7A;
+  padding-top:30px;
+  position: relative;
+  bottom: 380px;
+  left: 150px;
+  
+}
+
+.priceform input{
+  border-left:none;
+  border-top:none;
+  border-right:none;
+  border-bottom:3px solid #FCC4A6;
+  background:none;
+}
+
+.priceform button{
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  border:2px solid #FCC4A6;
+  color: #FCC4A6;
+  background:none;
+  margin-top: 10px;
+}
+
+.priceform p {
+  
+  color:#E3D5F0
+}
+
+
+.hidebox {
+ color: white;
+ margin-right: 5px;
+ margin-left: 220px;
+ margin-bottom: 100px;
+ display:inline-block;
+ text-align: right;
+}
+
+.zeroOpacity{
+  display:none;
+}
+
+
+.stock-info{
+  
+  margin-top: 108px;
+  margin-left: 5px;
+  background: #705C82;
+  padding:0 !important;
+  height: 460px;
+  overflow-y: hidden;
+}
+
+.maxprofit{
+  padding-top:5px;
+  color: #D7F7ED;
+  background:#3D5D94;
+  height: 150px;
+}
+
+.maxprofit h3{
+  margin-top: 10%;
+}
+
+.maxamt{
+  color:#FCC4A6;
+  border-top: 2px solid #FCC4A6;
+  border-bottom: 2px solid #FCC4A6;
+  display: inline-block;
+  padding: 5px;
+}
+
+.graph{
+  
+  height:250px;
+  background:#E8EBDC;
+  
+}
+
+.buysellinfo{
+  margin-top: auto;
+  color:#D7F7ED;
+  box-sizing: border-box;
+  background:#3D5D94;
+  height:100%;
+}
+
+.buysellinfo div{
+  padding-left:0px;
+  padding-right:0px;
+}
