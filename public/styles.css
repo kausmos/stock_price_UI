@@ -45,26 +45,28 @@ body {
   display: inline-block;
   width: 0px;
   height: 0px;
-  border: 10px solid #333;
+  border: 10px solid white;
   margin: 1px 10px;
+  border-radius: 0;
+  padding: 0px;
   
 }
 
 .btn.left {
-  border-right: 10px solid white;
+  border-right: 10px solid black;
 }
 
 .btn.right {
-  border-left: 10px solid white;
+  border-left: 10px solid black;
 }
 
 .btn.left:hover {
-  border-right: 10px solid #ccc;
+  border-right: 10px solid #222;
   cursor: pointer;
 }
 
 .btn.right:hover {
-  border-left: 10px solid #ccc;
+  border-left: 10px solid #222;
   cursor: pointer;  
 }
 
@@ -74,7 +76,7 @@ body {
   color:black;
 }
 
-td {
+#calendar-table td {
   border: 2px solid red;
 }
 
@@ -86,4 +88,17 @@ footer {
   font-size: 15px;
   font-style: italic;
 }
+
+.fa-plus-square{
+  
+}
+
+.fa-window-close{
+ color: #E42163;
+}
+
+.fa-window-close:hover{
+ color: #C21B53;
+}
+
 

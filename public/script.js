@@ -24,6 +24,26 @@ function getTotalDaysInMonth(year, month) {
     .getDate();
 }
 
+function addActionButtons(){
+  grid.forEach(function(cell){
+    
+    if(cell.nextSibling.innerHTML){
+      var delicon=document.createElement("I");
+      delicon.setAttribute("class", "fas fa-window-close");
+      cell.parentNode.appendChild(delicon);
+    }
+    else{
+      var plusicon=document.createElement("I");
+      plusicon.setAttribute("class", "fas fa-plus-square");
+      cell.parentNode.appendChild(plusicon);
+    }
+    
+  })
+}
+
+
+
+
 const grid = document.querySelectorAll('#calendar-table td .datelabel');
 const dateText = document.getElementById('date-text');
 const dateTextB = document.getElementById('date-textb');
@@ -62,6 +82,7 @@ function renderCalendar(date = CURR_DATE) {
     date.getMonth()
   );
   
+  
   let startDay = dayOfWeek - dateOfMnth % 7 + 1;
   
   if (startDay < 0)
@@ -69,16 +90,18 @@ function renderCalendar(date = CURR_DATE) {
   
   for ( let i = startDay; i < totalMonthDays + startDay; i++ ){
     grid[i % 35].innerHTML = (i - startDay + 1);
-    queryDate.setDate(grid[i % 35].innerHTML);
-    grid[i % 35].parentNode.lastChild.innerHTML = JSONobj[queryDate.toISOString().slice(0, 10)]|| "+";
+    queryDate.setDate(i - startDay + 1);
+    
+    grid[i % 35-1].nextSibling.innerHTML = JSONobj[queryDate.toISOString().slice(0, 10)]|| null;
   }
   
   grid[(startDay + dateOfMnth - 1) % 35].parentNode.classList.add('today-cell');
   
 //   dateText.innerHTML = CURR_DATE.toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-  dateText.innerHTML = CURR_DATE.toISOString().slice(0, 10);
+  dateText.value = CURR_DATE.toISOString().slice(0, 10);
   dateTextB.innerHTML = CURR_DATE.toISOString().slice(0, 10);
   priceText.innerHTML = JSONobj[CURR_DATE.toISOString().slice(0, 10)];
+  
   
   
 }
@@ -98,4 +121,5 @@ function renderCalendar(date = CURR_DATE) {
 })
 //clearGrid()
 renderCalendar();
+addActionButtons();
 

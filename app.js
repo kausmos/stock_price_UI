@@ -2,10 +2,13 @@ const express = require("express");
 const app =express();
 var Airtable = require('airtable');
 
+var bodyparser= require("body-parser");
+
 var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('app0uXuLQqKzUYz8w');
 
 var base = Airtable.base('app0uXuLQqKzUYz8w');
 app.set("view engine", "ejs");
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"));
 
 app.get('/',function(req,res) {
@@ -19,6 +22,7 @@ app.get('/',function(req,res) {
       // This function (`page`) will get called for each page of records.
   
       records.forEach(function(record) {
+        console.log(record.get('id'));
         dataObj[record.get('Date')]=record.get('Price');
           
       });
@@ -40,6 +44,20 @@ app.get('/',function(req,res) {
 app.post('/',function(req,res) {
   
   //post functionality will be adressed here
+  //testing the find method to retrieve particular fields
+  //------------------------------------------------------
+  
+  base('Stock Price').create({
+    "Date": req.body.date,
+    "Price": parseInt(req.body.price),
+  }, function(err, record) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log("record created : "+record);
+    res.redirect("/");
+  });
   
   
   
