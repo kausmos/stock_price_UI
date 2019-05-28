@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background: #D7F7ED;
 }
 
 #calendar-container {
@@ -26,26 +28,40 @@ body {
   margin:auto;
 }
 
-#calendar-table td, #calendar-table th {
+#calendar-table th {
   padding: 15px 20px;
   border: none;
   text-align: center;
-  border-radius: 2px;
+  
+}
+
+#calendar-table td{
+  
+  height: 80px;
+  width:80px;
+  text-align: left;
+  vertical-align: top;
+  padding-top: 0;
+}
+
+#calendar-table th {
+  background-color:#1F4A95;
+  color:#D7F7ED;
 }
 
 .today-cell {
   background-color: #888;
 }
 
-#date-text {
-  text-align: center;
+.datelabel {
+  margin-top: 0;
 }
 
 .btn {
   display: inline-block;
   width: 0px;
   height: 0px;
-  border: 10px solid white;
+  border: 10px solid transparent;
   margin: 1px 10px;
   border-radius: 0;
   padding: 0px;
@@ -71,14 +87,32 @@ body {
 }
 
 #calendar-table td:hover {
-  background-color: #ddd;
+  background-color: #381657;
   cursor: pointer;
-  color:black;
+ 
 }
 
 #calendar-table td {
-  border: 2px solid red;
+  
+  margin: 2px;
+  color:#E3D5F0;
 }
+
+#calendar-table tr:nth-of-type(odd) td:nth-of-type(odd) { 
+  background: #6D5285;
+}
+#calendar-table tr:nth-of-type(odd) td:nth-of-type(even) { 
+  background: #5A3B75;
+}
+
+#calendar-table tr:nth-of-type(even) td:nth-of-type(odd) { 
+  background: #5A3B75;
+}
+#calendar-table tr:nth-of-type(even) td:nth-of-type(even) { 
+  background: #6D5285;
+}
+
+
 
 footer {
   margin: 10px auto;
@@ -90,15 +124,33 @@ footer {
 }
 
 .fa-plus-square{
-  
+  display:inline-block;
+  margin-top: auto;
+  color: #E3D5F0;
+  padding-left:15px;
+  padding-top: 10px;
+}
+
+.fa-plus-square:hover{
+  color: #4567A3;
 }
 
 .fa-window-close{
+  display:inline;
  color: #E42163;
 }
 
 .fa-window-close:hover{
- color: #C21B53;
+ color: #E8487D;
 }
 
+.pricelabel{
+  font-size:22px;
+  color: #FCC4A6;
+  display: inline-block;
+  padding-left: 6px;
+}
+.datelabel{
+  display:block;
+}
 

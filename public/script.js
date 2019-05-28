@@ -25,6 +25,11 @@ function getTotalDaysInMonth(year, month) {
 }
 
 function addActionButtons(){
+  var icons= document.querySelectorAll("td i");
+  icons.forEach(function(icon){
+    icon.remove();
+  })
+  
   grid.forEach(function(cell){
     
     if(cell.nextSibling.innerHTML){
@@ -33,9 +38,12 @@ function addActionButtons(){
       cell.parentNode.appendChild(delicon);
     }
     else{
-      var plusicon=document.createElement("I");
-      plusicon.setAttribute("class", "fas fa-plus-square");
-      cell.parentNode.appendChild(plusicon);
+      if(cell.innerHTML){
+        var plusicon=document.createElement("I");
+        plusicon.setAttribute("class", "fas fa-plus-square");
+        cell.parentNode.appendChild(plusicon);
+      }
+      
     }
     
   })
@@ -64,7 +72,9 @@ function clearGrid() {
   grid.forEach(cell => {
     cell.innerHTML = '';
     cell.parentNode.classList.remove('today-cell');
+    
   });
+  
 }
 
 function renderCalendar(date = CURR_DATE) {
@@ -101,9 +111,7 @@ function renderCalendar(date = CURR_DATE) {
   dateText.value = CURR_DATE.toISOString().slice(0, 10);
   dateTextB.innerHTML = CURR_DATE.toISOString().slice(0, 10);
   priceText.innerHTML = JSONobj[CURR_DATE.toISOString().slice(0, 10)];
-  
-  
-  
+  addActionButtons();
 }
 
 [...document.getElementsByClassName('btn')].forEach(btn => {
@@ -115,11 +123,12 @@ function renderCalendar(date = CURR_DATE) {
   
   btn.onclick = function() {
     CURR_DATE.setMonth(CURR_DATE.getMonth() + incr);
-    renderCalendar(); 
+    renderCalendar();
+    
   };
   
 })
 //clearGrid()
 renderCalendar();
-addActionButtons();
+
 
